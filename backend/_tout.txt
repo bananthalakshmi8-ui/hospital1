@@ -1,0 +1,3 @@
+HEALTH 200 {'message': 'MediCare Plus API is running', 'status': 'healthy', 'success': True}
+MEDICINES 200 6
+LOGIN 200 True

@@ -1,0 +1,14 @@
+﻿import sys
+sys.path.insert(0, '.')
+from app import app
+c = app.test_client()
+r = c.get('/api/health')
+r2 = c.get('/api/medicines')
+d = r2.get_json()
+r3 = c.post('/api/auth/login', json={'email':'patient@medicareplus.com','password':'patient123'})
+lines = [
+    f'HEALTH {r.status_code} {r.get_json()}',
+    f'MEDICINES {r2.status_code} {d.get("count")}',
+    f'LOGIN {r3.status_code} {r3.get_json().get("success")}',
+]
+raise SystemExit('\n'.join(lines))

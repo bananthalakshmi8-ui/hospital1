@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.env
+database/*.db
+uploads/prescriptions/*
+!uploads/prescriptions/.gitkeep
+!database/.gitkeep
+.venv/
+venv/
